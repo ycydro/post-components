@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import './index.css'
 import App from './App.jsx'
 
