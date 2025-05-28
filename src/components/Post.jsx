@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import Comment from './Comment'
 import ThumbUpIcon from '@mui/icons-material/ThumbUpOutlined';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
@@ -6,9 +6,33 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
-const Post = ({post: {img, name, text, comments = []}}) => {
+const Post = ({post: {img, name, text, comments: initialComments = []}}) => {
    const [showComments, setShowComments] = useState(false);
    const [isLiked, setIsLiked] = useState(false);
+   const [comments, setComments] = useState(initialComments);
+   const [newComment, setNewComment] = useState('');
+
+   // useEffect(() => {
+   //    console.log(newComment)
+   // }, [newComment])
+
+   const handleAddComment = () => {
+
+      if (newComment.trim('') === '') return;
+
+      const newCommentObj = {
+         id: `c-${Date.now()}`, 
+         img: img,
+         author: name,
+         comment: newComment
+      };
+
+      console.log(newCommentObj);
+
+      setComments(prevComments => [...prevComments, newCommentObj])
+      setNewComment('')
+
+   }
   
    return (
     <div className='post-wrapper'>
@@ -53,6 +77,18 @@ const Post = ({post: {img, name, text, comments = []}}) => {
             )}  
          </div>
       }
+      <div className='add-comment'>
+         <input 
+         type="text" 
+         placeholder='Add a comment...'
+         name="" 
+         id="comment-input"
+         value= {newComment}
+         onChange={(e) => {setNewComment(e.target.value)}} />
+         <button 
+         onClick={handleAddComment}
+         id='add-comment-btn'>Add Comment</button>
+      </div>
          
     </div>
   )

@@ -88,3 +88,22 @@ body {
   font-size: 0.9rem;
   margin: 0;
 }
+
+.add-comment {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#comment-input {
+  color: white;
+  width: 90%;
+  outline: none;
+  padding: 0.5rem;
+}
+
+#add-comment-btn {
+  color: white;
+  background-color: cadetblue;
+  outline: none;
+}
