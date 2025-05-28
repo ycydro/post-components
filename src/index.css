@@ -58,3 +58,21 @@ body {
   gap: 5px;
 }
 
+.commenter-details {
+  display: flex;
+  align-items: center;
+}
+
+.comment-details {
+  border-radius: 1rem;
+  padding: 8px;
+  background-color: gray;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-details > p {
+  font-size: 0.9rem;
+  margin: 0;
+}
