@@ -16,6 +16,7 @@ body {
 .wrapper {
   width: 100vw;
   height: 100dvh;
+  margin-block: 1rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -36,6 +37,11 @@ body {
 .poster-pic {
   border-radius: 50%;
   margin-right: 7px;
+}
+
+.date-posted {
+  color: gray;
+  font-size: 0.8rem;
 }
 
 .post-details {
@@ -82,6 +88,7 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
+  word-break: break-all; /* This is key */
 }
 
 .comment-details > p {
@@ -92,6 +99,7 @@ body {
 .add-comment {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   gap: 10px;
 }
 
@@ -106,4 +114,14 @@ body {
   color: white;
   background-color: cadetblue;
   outline: none;
+}
+
+.interaction-counts{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.interaction-counts > p {
+  margin: 0;
 }

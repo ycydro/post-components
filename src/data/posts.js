@@ -31,7 +31,7 @@ const posts = [
       id: 3,
       img: '/cat3.jpg',
       name: "Bei",
-      text: "Pokenangena mo",
+      text: "meow",
       comments: [
          {
             id: "c1",

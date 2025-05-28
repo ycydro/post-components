@@ -6,7 +6,7 @@ const Comment = ({comment: {img, author, comment}}) => {
          <img className='poster-pic' src={img} alt="" width="40px"/>
          <div className='comment-details'>
             <span>{author}</span>
-            <p>{comment}</p>
+            <p className='comment-content'>{comment}</p>
          </div>
       </div>
   )
