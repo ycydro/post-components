@@ -37,13 +37,13 @@ const posts = [
             id: "c1",
             img: '/cat1.jpg',
             author: "Downfall Prayer",
-            comment: "WTF"
+            comment: "  Lorem ipsum, dolor sit amet consectetur adipisicing elit."
          },
          {
             id: "c2",
             img: '/cat2.jpg',
             author: "Downfall Hoper",
-            comment: "POMENGNAN"
+            comment: "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae modi dicta magni aspernatur fugiat animi sunt reiciendis molestiae facere voluptas! Modi deserunt accusantium aliquam. Maxime, aperiam laboriosam ullam debitis hic enim vero molestias harum facilis adipisci culpa temporibus perferendis repudiandae quisquam, eveniet at impedit reiciendis."
          }
       ]
    },   

@@ -8,6 +8,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const Post = ({post: {img, name, text, comments = []}}) => {
    const [showComments, setShowComments] = useState(false);
+   const [isLiked, setIsLiked] = useState(false);
   
    return (
     <div className='post-wrapper'>
@@ -23,9 +24,13 @@ const Post = ({post: {img, name, text, comments = []}}) => {
       </div>
       <hr />
       <div className='post-interactions'>
-         <button className='post-reaction post-interaction'>
+         <button
+         style={isLiked ? {color: 'skyblue'} : {color: '#ced1d5'}}  
+         className='post-reaction post-interaction'
+         onClick={() => {setIsLiked(!isLiked)}}  
+         >
             <ThumbUpIcon />
-            <span>Like</span>
+            <span>{isLiked ? 'Liked' : 'Like'}</span>
          </button>
 
          <button
@@ -41,12 +46,10 @@ const Post = ({post: {img, name, text, comments = []}}) => {
       {/* show comments  */}
       { showComments &&
          <div className='post-comments'>
-            {comments.length > 0 ? (
+            {comments.length > 0 && (
                comments.map((comment) => (
                   <Comment key={comment.id} comment={comment}/>
                ))
-            ) : (
-               <p> No comments. </p>
             )}  
          </div>
       }
