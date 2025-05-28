@@ -58,6 +58,12 @@ body {
   gap: 5px;
 }
 
+.post-comments{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .commenter-details {
   display: flex;
   align-items: center;

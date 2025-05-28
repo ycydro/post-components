@@ -4,7 +4,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUpOutlined';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
-const Post = ({post: {img, name, text}}) => {
+const Post = ({post: {img, name, text, comments = []}}) => {
   return (
     <div className='post-wrapper'>
       <div className='poster-details'>
@@ -30,11 +30,13 @@ const Post = ({post: {img, name, text}}) => {
          </button>
       </div>
       <hr />
-      <Comment
-         img="/cat1.jpg"
-         name="BUlbulito"
-         text="HI"
-      />
+      {comments.length > 0 && 
+         <div className='post-comments'>
+          {comments.map((comment) => (
+            <Comment key={comment.id} comment={comment}/>
+         ))}
+         </div>
+      }
     </div>
   )
 }

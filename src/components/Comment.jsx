@@ -1,17 +1,15 @@
 import React from 'react'
 
-const Comment = ({img, name, text}) => {
+const Comment = ({comment: {img, author, comment}}) => {
    console.log(img);
   return (
-    <div className='post-comments'>
-         <div className='commenter-details'>
-            <img className='poster-pic' src={img} alt="" width="40px"/>
-           <div className='comment-details'>
-             <span>{name}</span>
-             <p>{text}</p>
-            </div>
+      <div className='commenter-details'>
+         <img className='poster-pic' src={img} alt="" width="40px"/>
+         <div className='comment-details'>
+            <span>{author}</span>
+            <p>{comment}</p>
          </div>
-    </div>
+      </div>
   )
 }
 
