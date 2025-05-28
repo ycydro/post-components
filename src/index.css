@@ -49,13 +49,19 @@ body {
   justify-content: space-around;
 }
 
-.post-reaction, .post-comment {
+.post-interaction {
+  cursor: pointer;
+  padding: 2px;
   border: none;
   color: #ced1d5;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.post-interaction:hover{
+  text-decoration: underline;
 }
 
 .post-comments{

@@ -1,11 +1,15 @@
-import React from 'react'
+import {useState} from 'react'
 import Comment from './Comment'
 import ThumbUpIcon from '@mui/icons-material/ThumbUpOutlined';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
+
+
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 
 const Post = ({post: {img, name, text, comments = []}}) => {
-  return (
+   const [showComments, setShowComments] = useState(false);
+  
+   return (
     <div className='post-wrapper'>
       <div className='poster-details'>
          <img className='poster-pic' src={img} alt="" width="40px"/>
@@ -19,24 +23,34 @@ const Post = ({post: {img, name, text, comments = []}}) => {
       </div>
       <hr />
       <div className='post-interactions'>
-         <button className='post-reaction'>
+         <button className='post-reaction post-interaction'>
             <ThumbUpIcon />
             <span>Like</span>
          </button>
 
-         <button className='post-comment'>
+         <button
+         style={showComments ? {color: 'dimgray'} : {color: '#ced1d5'}} 
+         className='post-comment post-interaction'
+         onClick={() => {setShowComments(!showComments)}}
+         >
             <ChatBubbleOutlineIcon />
             <span>Comment</span>
          </button>
       </div>
       <hr />
-      {comments.length > 0 && 
+      {/* show comments  */}
+      { showComments &&
          <div className='post-comments'>
-          {comments.map((comment) => (
-            <Comment key={comment.id} comment={comment}/>
-         ))}
+            {comments.length > 0 ? (
+               comments.map((comment) => (
+                  <Comment key={comment.id} comment={comment}/>
+               ))
+            ) : (
+               <p> No comments. </p>
+            )}  
          </div>
       }
+         
     </div>
   )
 }
